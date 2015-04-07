@@ -1,0 +1,67 @@
+﻿<div class="rotamatic-main-content">
+    <div class="container-fluid">
+        <div class="col-lg-offset-4 col-lg-4 
+                    col-md-offset-4 col-md-4 
+                    col-sm-offset-3 col-sm-6 
+                    col-xs-offset-0 col-xs-12">
+            <form id="frmLogin" name="frmLogin" role="form" novalidate>
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h2 class="panel-title">Sign In</h2>
+                    </div>
+                    <div class="panel-body">
+                        <div style="display:none" id="login-alert" class="alert alert-danger col-sm-12"></div>
+                        <div class="alert alert-danger" data-ng-show="isInvalidLoginCredentials">
+                            Invalid Username/Password combination.
+                        </div>
+                        <div style="margin-bottom: 15px;">
+                            <label class="control-label">Email Address:</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                <input id="txtEmailAddress"
+                                       name="txtEmailAddress"
+                                       type="text"
+                                       class="form-control"
+                                       data-ng-model="loginForm.username"
+                                       placeholder="Email Address"
+                                       data-required>
+                            </div>
+                            <div class="text-danger"
+                                 data-ng-show="frmLogin.txtEmailAddress.$error.required &&
+                                               frmLogin.txtEmailAddress.$dirty">
+                                Please enter your Email Address
+                            </div>
+                        </div>
+                        <div style="margin-bottom: 0px;">
+                            <label class="control-label">Password:</label>
+                            <div style="margin-bottom: 0;" class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-asterisk"></i></span>
+                                <input id="txtPassword"
+                                       name="txtPassword"
+                                       type="password"
+                                       class="form-control"
+                                       data-ng-model="loginForm.password"
+                                       placeholder="Password"
+                                       data-required>
+                            </div>
+                            <div class="text-danger"
+                                 data-ng-show="frmLogin.txtPassword.$error.required &&
+                                               frmLogin.txtPassword.$dirty">
+                                Please enter your Password
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="panel-footer">
+                        <button id="btn-login"
+                                class="btn btn-primary btn-block"
+                                data-ng-click="login(loginForm)"
+                                data-ng-disabled="frmLogin.$invalid">
+                            Sign in
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
